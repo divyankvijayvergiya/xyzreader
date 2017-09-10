@@ -96,10 +96,10 @@ public class ArticleDetailFragment extends Fragment implements
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
-        Slide slide=new Slide(Gravity.BOTTOM);
-        slide.addTarget(R.id.recycler_view);
+        Slide slide=new Slide(Gravity.RIGHT);
+        slide.addTarget(R.id.toolbar_container);
         slide.setInterpolator(AnimationUtils.loadInterpolator(getActivity(),android.R.interpolator.linear_out_slow_in));
-        slide.setDuration(1000);
+        slide.setDuration(3000);
         getActivity().getWindow().setEnterTransition(slide);
 
     }
