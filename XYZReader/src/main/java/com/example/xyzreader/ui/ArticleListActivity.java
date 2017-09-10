@@ -67,6 +67,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        setupWindowAnimations();
 
 
         getLoaderManager().initLoader(0, null, this);
@@ -75,7 +76,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
-        setupWindowAnimations();
+
 
 
     }
