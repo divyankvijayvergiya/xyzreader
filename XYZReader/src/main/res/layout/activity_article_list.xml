@@ -26,7 +26,8 @@
             app:contentInsetStart="16dp"
             app:layout_collapseMode="pin"
             android:layout_height="?actionBarSize"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            app:layout_scrollFlags="scroll|enterAlways">
 
             <ImageView
                 android:id="@+id/logo"

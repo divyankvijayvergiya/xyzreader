@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="bottom|start"
-            android:background="@android:color/background_light">
+            android:background="@android:color/transparent">
 
         <TextView
             android:id="@+id/article_title"

@@ -97,10 +97,11 @@ public class ArticleDetailFragment extends Fragment implements
                 R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
         Slide slide=new Slide(Gravity.BOTTOM);
-        slide.addTarget(R.id.card_view);
+        slide.addTarget(R.id.recycler_view);
         slide.setInterpolator(AnimationUtils.loadInterpolator(getActivity(),android.R.interpolator.linear_out_slow_in));
         slide.setDuration(1000);
         getActivity().getWindow().setEnterTransition(slide);
+
     }
 
     public ArticleDetailActivity getActivityCast() {
