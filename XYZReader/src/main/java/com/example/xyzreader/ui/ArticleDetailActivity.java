@@ -13,9 +13,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Slide;
+import android.transition.Fade;
+import android.transition.TransitionInflater;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
@@ -111,9 +111,12 @@ public class ArticleDetailActivity extends AppCompatActivity
                 mSelectedItemId = mStartId;
             }
         }
-        Slide slide=new Slide(Gravity.BOTTOM);
-        slide.addTarget(R.id.card_view);
-        getWindow().setEnterTransition(slide);
+        setupWindowAnimations();
+
+    }
+    private void setupWindowAnimations() {
+        Fade fade = (Fade) TransitionInflater.from(this).inflateTransition(R.transition.grid_exit);
+        getWindow().setEnterTransition(fade);
     }
 
     @Override
