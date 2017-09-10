@@ -69,10 +69,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
 
         getLoaderManager().initLoader(0, null, this);
-        Bundle bundle= ActivityOptions
-                .makeSceneTransitionAnimation(this)
-                .toBundle();
-        getBaseContext().startActivity(intent ,bundle);
+
 
         if (savedInstanceState == null) {
             refresh();
@@ -161,8 +158,12 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Bundle bundle= ActivityOptions
+                            .makeSceneTransitionAnimation(ArticleListActivity.this)
+                            .toBundle();
+
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))),bundle);
                 }
             });
             return vh;
